@@ -1,29 +1,15 @@
-# draglayout
+# anchor-scroll
 
 > 基于vue的scroll跳转插件，代替锚点的需求
 
-## Build Setup
-
-``` bash
-
-npm install vue-drag-flex
-
-main.js
-import DragLayout from 'vue-drag-flex'
-Vue.use(DragLayout)
-
-
-# build for production with minification
-npm run build
-```
 npm下载  
 -
 > npm install vue-anchor-scroll 
 
 main.js   
 -
-> import DragLayout from 'vue-drag-flex'  
-Vue.use(DragLayout)
+> import AnchorScroll from 'vue-anchor-scroll'
+  Vue.use(AnchorScroll)
 
 template
 -
@@ -70,12 +56,3 @@ trigger-view
 |  属性   | 可选值  | 默认值 | 类型  | 说明 |
 |  ----  | ----  |  ----  |  ----  |  ----  |
 | anchor-key  | -- | -- | String | 执行跳转的依据，需要与trigger-key对应 |
-
-
-slot
-
-|  名称   | 描述  |
-|  ----  | ----  | 
-| slider  | 可通过插槽自定义slider样式，如不设置，则使用默认样式 | 
-
-drag-layout-item与drag-layout可互相嵌套，形成类似表格的布局
