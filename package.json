@@ -1,7 +1,7 @@
 {
   "name": "vue-anchor-scroll",
   "description": "基于vue的scroll跳转插件，代替锚点的需求",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "wangkaiqiang001 <1426422145@qq.com>",
   "license": "MIT",
   "main": "dist/anchor-scroll.js",

@@ -122,7 +122,7 @@
 
         let flag
         if(clientHeight>=viewHeight){
-          flag = topY>viewTop
+          flag = topY<viewTop
         } else {
 
           //flag = topY>viewTop&&bottomY<viewBottom-clientHeight
