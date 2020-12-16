@@ -76,6 +76,10 @@
           array = array.reverse()
           let num = 0
           let animate = function () {
+            // 一旦进入递归，各种距离都要重新获取，防止用户此期间操作以及高度等数据变化
+            offsetTop = element.offsetTop
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            viewHeight = window.innerHeight|| document.documentElement.clientHeight||document.body.clientHeight;
             setTimeout(() => {
               // 等差数列每项都可能为小数，由于计算偏差，以及滚动条每次操作值需为整数。
               // 所以每项向上取整，这可能会导致动画执行速度略大于预期（即所设时间为最慢执行时间）
