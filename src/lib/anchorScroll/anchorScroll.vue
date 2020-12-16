@@ -55,7 +55,7 @@
         // const _this = this
         return new Promise((resolve)=>{
           let offsetTop = element.offsetTop
-          let scrollTop = document.documentElement.scrollTop
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
           let viewHeight = window.innerHeight|| document.documentElement.clientHeight||document.body.clientHeight;
           // t为秒数，z为执行间隔，求出需要执行几次才能在规定时间完成
           let count = t/z
@@ -94,7 +94,7 @@
                 condition = !(document.documentElement.scrollTop>=offsetTop)
               }
               // 如果条件通过，并且没触底才可以继续
-              if (condition && scrollHeight + viewHeight < scrollHeight) {
+              if (condition && scrollTop  + viewHeight < scrollHeight) {
                 animate()
               }else{
                 resolve()
