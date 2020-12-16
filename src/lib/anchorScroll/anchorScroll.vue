@@ -85,15 +85,16 @@
                 document.documentElement.scrollTop += array[num]? Math.ceil(array[num]) : 1
               }
               num+=1
-              let scrollBottom = document.documentElement.scrollTop+viewHeight
-              let scrollHeight = document.documentElement.scrollHeight
+              // let scrollBottom = document.documentElement.scrollTop+viewHeight
+              let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
               let condition
               if(scrollTop>offsetTop){
                 condition = !(document.documentElement.scrollTop<=offsetTop)
               } else {
                 condition = !(document.documentElement.scrollTop>=offsetTop)
               }
-              if (condition && scrollHeight - scrollBottom>0) {
+              // 如果条件通过，并且没触底才可以继续
+              if (condition && scrollHeight + viewHeight < scrollHeight) {
                 animate()
               }else{
                 resolve()
