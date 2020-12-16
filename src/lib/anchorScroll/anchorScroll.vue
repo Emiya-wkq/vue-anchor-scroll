@@ -93,8 +93,9 @@
               } else {
                 condition = !(document.documentElement.scrollTop>=offsetTop)
               }
-              // 如果条件通过，并且没触底才可以继续
-              if (condition && scrollTop  + viewHeight < scrollHeight) {
+              // 如果条件通过，并且没触底才可以继续,有些设备会出现滚动条已经触底，但经过计算仍然有几像素的问题
+              // 所以设置一定误差(此设置可能会导致由底部向上滚动出现不执行的问题)
+              if (condition && scrollHeight - (scrollTop  + viewHeight) > 5) {
                 animate()
               }else{
                 resolve()
